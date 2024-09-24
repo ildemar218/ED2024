@@ -10,7 +10,7 @@ struct nodo {
 
 nodo *cab, *aux, *aux2;
 
-bool Codigo_repedido(int codigo) {
+bool Codigo_repedido(int codigo) { // valida si el codigo ya se encuentra en la lista retornando un fals o un true
     aux = cab;
     while (aux != nullptr) {
         if (aux->codigo == codigo) {
@@ -20,12 +20,11 @@ bool Codigo_repedido(int codigo) {
     }
     return false;
 }
-void registrar(){
-
+void registrar(){ // funcion para agregar un nuevo estudiante a la lista 
     int codigo;
     cout << "Codigo: ";
     cin >> codigo;
-    if (Codigo_repedido(codigo)) {
+    if (Codigo_repedido(codigo)) {// llama a la funcion para ver si el codigo ya esta en la lista
         cout << "El codigo ya existe" << endl;
         return;  
     }
@@ -47,7 +46,7 @@ void registrar(){
     }
     
 }
-void mostrar(){
+void mostrar(){ // recorre la lista para mostrar los estudiantes codigos y notas
     aux=cab;
     cout<<"--------- "<<endl;
     while(aux!=nullptr){
@@ -92,8 +91,7 @@ void ordenarDoc(){
     }
 }
 
-void calcularmayorymenor() {
-    aux = cab;
+void calcularmayorymenor() {     aux = cab;
     int mayor = aux->nota;
     int menor = aux->nota;
     string nombreMayor = aux->nombre;
